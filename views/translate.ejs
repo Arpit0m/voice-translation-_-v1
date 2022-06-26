@@ -1,0 +1,56 @@
+<%- include("partials/header"); -%> 
+   
+<main>
+  <div class="container py-4 mt-5">
+   
+    <div class="px-1 py-5 mb-4 bg-light bg-gradient rounded-3 border ">
+      <div class="container-fluid py-5">
+     
+                <form action="/translate" method="post">
+                    <div class="row mb-4">
+                        <div class="col-md-3 offset-md-2">
+                            <select name="inputLang" id="" class="form-contro form-select" autocomplete="off">
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-2 text-center">
+                            
+                        <button type="button" name="exchange" class="btn btn-primary" value="off" id="exchangeButton"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
+                       </div>
+                       
+
+                        <div class="col-md-3">
+                            <select name="outputLang" id="" class="form-control form-select" autocomplete="off">
+                                
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-8 offset-md-2">
+                            <textarea name="text" id="" cols="5" rows="10" class="form-control" placeholder="type your text" autofocus><% for(let i = 0 ; i < 1 ; i++ ) { %><%= output[output.length - 1] %>  <% } %></textarea>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 offset-md-4">
+                            <button type="submit" class="btn btn-success form-control">Convert</button>
+                        </div>
+                    </div>
+                </form>
+      </div>
+    </div>
+
+   
+      
+
+    <footer class="pt-3 mt-4 text-muted">
+      &copy; 2022
+    </footer>
+  </div>
+</main>
+
+
+
+ <%- include("partials/footer"); -%> 
