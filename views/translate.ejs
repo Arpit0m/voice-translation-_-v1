@@ -9,27 +9,31 @@
                 <form action="/translate" method="post">
                     <div class="row mb-4">
                         <div class="col-md-3 offset-md-2">
-                            <select name="inputLang" id="" class="form-contro form-select" autocomplete="off">
+                            <select name="inputLang" id="inputLang" class="form-control form-select form" autocomplete="off" aria-valuenow="option" aria-valuetext="">
+                              <option value="">Select Language</option>
                             </select>
 
                         </div>
 
                         <div class="col-md-2 text-center">
+                          <button type="button" name="mic" class="btn btn-primary me-3 rounded-5 " id="mic"><i class="fa-solid fa-microphone"></i></button>
                             
-                        <button type="button" name="exchange" class="btn btn-primary" value="off" id="exchangeButton"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
+                        <button type="button" name="exchange" class="btn btn-primary rounded-5 " value="off" id="exchangeButton"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
+
+                        <button type="button" name="speak" class="btn btn-primary ms-3 rounded-5 "><i class="fa-solid fa-volume-low"></i></button>
                        </div>
                        
 
                         <div class="col-md-3">
                             <select name="outputLang" id="" class="form-control form-select" autocomplete="off">
-                                
+                                <option value="">Select Language</option>
                             </select>
                         </div>
 
                     </div>
                     <div class="row mb-4">
                         <div class="col-md-8 offset-md-2">
-                            <textarea name="text" id="" cols="5" rows="10" class="form-control" placeholder="type your text" autofocus><% for(let i = 0 ; i < 1 ; i++ ) { %><%= output[output.length - 1] %>  <% } %></textarea>
+                            <textarea name="text" id="textbox" cols="5" rows="10" class="form-control" placeholder="type your text" autofocus><% for(let i = 0 ; i < 1 ; i++ ) { %><%= output[output.length - 1] %>  <% } %> </textarea>
                         </div>
                         
                     </div>

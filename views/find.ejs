@@ -1,4 +1,62 @@
 <%- include("partials/header"); -%> 
+<div class="container heading mt-3">
+<h1 class="display-3 text-muted"><em>English Dictionary</em></h1>
+</div>
+<div class="container mt-5 mb-3">
+    <form action="/find" method="post">
+      <div class="input-group mt-5 px-5 pb-5">
+        <input type="text" name="word" id="" class="form-control form-control-lg" placeholder="Serach" autocomplete="off" autofocus required>
+        <span class="input-group-text p-0"> <button class="btn  btn-primary rounded-0 btn-lg px-4" type="submit" value="find" name="button"><i class="fa-solid fa-magnifying-glass"></i></button></span>
+      </div>
+    </form>
+    <div class="container d-flex justify-content-between">
+
+    </div>
+
+  </div>
+
+
+ <div class="container justify-center mb-3">
+      <% if (incorrectFlag) { %>
+        <p class="h2"> Can't find <i><%=query%> </i>  </p>
+      <% } else { %>
+        <p class="h2"><i id="userQuery"><%=query%></i> <button class="btn btn-light rounded-4" id="audioButton" name="audioButton"><i class="fa-solid fa-volume-high"></i></button> </p>
+        <% } %>       
+  </div>
+
+
+
+<% for( let i = 0; i < definations.length; i++ ) { %>
+    <div class="container justify-center ">
+      <div class="card mb-1">
+        <div class="card-body bg-dark bg-opacity-10">
+  
+  
+          <button class="card-title btn-unstyled text-muted h5"><%= partOfSpeech[i] %></button>
+  
+  
+            <% definations[i].forEach(element => { %>
+            <p class="card-text mb-0"><%= element.definition %>
+  
+              <% }) %>
+            </p>
+        </div>
+      </div>
+    </div>
+    <% } %>
+
+    <div class="d-none"></div>
+   <% for( let index = 0; index < audio.length; index++ ) { %>
+    <p class="d-none audioUrl"><%= audio[index] %></p>
+   <% } %>
+
+
+
+
+
+<!-- <form action="/find" method="post">
+<button class="btn btn-danger" value="find another">Find another</button>
+</form> -->
 
  
 
