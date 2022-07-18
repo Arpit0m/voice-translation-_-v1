@@ -113,7 +113,7 @@ app.post("/find", function(req, res) {
   https.get(url, function(response) {
     // console.log(response);   //testing
     console.log('statusCode', res.statusCode);
-    console.log('headers', res.header);
+    // console.log('headers', res.header);
 
 
     response.on('data', function(data) {
@@ -132,7 +132,7 @@ app.post("/find", function(req, res) {
             audio.push(phonetic.audio);
           });
 
-          console.log(audio);
+          // console.log(audio);
         }
 
 
@@ -140,7 +140,7 @@ app.post("/find", function(req, res) {
           partOfSpeech.push(meanings.partOfSpeech);
           definations.push(meanings.definitions);
         });
-        console.log(audio.length);
+        // console.log(audio.length);
         // console.log(definations.length);   //testing
         //   console.log(meanings.length);    //testing
         //   console.log(partOfSpeech);       //testing
